@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Contraseña - Partido Conservador</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        /* Estilos específicos para la página de creación de contraseña */
+        .password-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #F5F5F5;
+        }
+        
+        .password-box {
+            background-color: #FFFFFF;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .password-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #1A237E;
+            margin-bottom: 30px;
+        }
+
+        .password-form .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .password-form .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            color: #424242;
+            margin-bottom: 5px;
+        }
+
+        .password-form .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #E0E0E0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .password-form .form-group input:focus {
+            outline: none;
+            border-color: #C9A646;
+        }
+        
+        .submit-btn-form {
+            width: 100%;
+            background-color: #C9A646;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn-form:hover {
+            background-color: #1A237E;
+        }
+        
+        .back-login {
+            margin-top: 25px;
+            display: block;
+            color: #1A237E;
+        }
+    </style>
+</head>
+<body>
+    <div class="password-container">
+        <div class="password-box">
+            <a href="index.html" class="logo">
+                <img src="img/logo-partido.png" alt="Logo del Partido Conservador" style="height: 60px; margin-bottom: 20px;">
+            </a>
+            <h2>Crear Nueva Contraseña</h2>
+            <form class="password-form">
+                <div class="form-group">
+                    <label for="new-password">Nueva Contraseña</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirmar Contraseña</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit" class="submit-btn-form">Guardar y Continuar</button>
+            </form>
+            <a href="login.html" class="back-login">← Volver al login</a>
+        </div>
+    </div>
+</body>
+</html>

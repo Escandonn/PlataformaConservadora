@@ -115,3 +115,29 @@ body {
 .read-more:hover {
     border-bottom: 2px solid var(--color-primary);
 }
+
+@media (max-width: 700px) {
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    .logo {
+        margin-bottom: 15px;
+        align-self: center;
+    }
+    .nav-menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 10px 15px;
+        width: 100%;
+        justify-items: center;
+        margin-left: 0;
+    }
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+}

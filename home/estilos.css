@@ -117,7 +117,7 @@ a {
    ========================================================================= */
 
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/L5hY54Q/plataforma-conservadora-hero.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image.png');
     background-size: cover;
     background-position: center;
     color: #FFFFFF;
@@ -256,4 +256,31 @@ a {
 .footer-content p {
     margin: 10px 0;
     font-size: 0.9rem;
+}
+
+
+/* Responsive Navbar: 3 links arriba, 3 abajo en pantallas pequeñas */
+/* filepath: c:\Users\Administrador\Desktop\proyecto_derecho\PlataformaConservadora\home\estilos.css */
+@media (max-width: 800px) {
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 10px;
+    }
+    .logo {
+        margin-bottom: 15px;
+        align-self: center;
+    }
+    .nav-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 10px 15px;
+        width: 100%;
+        justify-items: center;
+    }
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
 }

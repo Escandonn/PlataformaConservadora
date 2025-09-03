@@ -1,0 +1,82 @@
+/* Estilos específicos para la página de login, si los necesitas */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #F5F5F5; /* Usamos el gris claro como fondo */
+        }
+        
+        .login-box {
+            background-color: #FFFFFF;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .login-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #1A237E;
+            margin-bottom: 30px;
+        }
+
+        .login-form .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .login-form .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            color: #424242;
+            margin-bottom: 5px;
+        }
+
+        .login-form .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #E0E0E0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .login-form .form-group input:focus {
+            outline: none;
+            border-color: #C9A646;
+        }
+        
+        .login-btn-form {
+            width: 100%;
+            background-color: #C9A646;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn-form:hover {
+            background-color: #1A237E;
+        }
+
+        .forgot-password {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #424242;
+        }
+        
+        .back-home {
+            margin-top: 25px;
+            display: block;
+            color: #1A237E;
+        }
+    

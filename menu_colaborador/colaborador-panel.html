@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Colaborador - Plataforma Conservadora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin-estilos.css">
+</head>
+<body>
+    
+    <header class="admin-header">
+        <nav class="admin-nav">
+            <a href="colaborador-panel.html" class="admin-logo">
+                Mi Panel
+            </a>
+            <ul class="admin-nav-links">
+                <li><a href="#mi-perfil">Mi Perfil</a></li>
+                <li><a href="#ingresar-datos">Ingresar Datos</a></li>
+                <li><a href="#ver-datos">Ver Datos</a></li>
+                <li><a href="login.html" class="logout-btn">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="admin-main">
+        <section id="mi-perfil" class="admin-section">
+            <h1 class="admin-title">Mi Perfil</h1>
+            <div class="info-cards">
+                <div class="card">
+                    <h3>Información Personal</h3>
+                    <p><strong>Cédula:</strong> <span id="perfil-cedula">123456789</span></p>
+                    <p><strong>Correo:</strong> <span id="perfil-correo">correo@ejemplo.com</span></p>
+                    <p><strong>Celular:</strong> <span id="perfil-celular">300-111-2222</span></p>
+                </div>
+                <div class="card">
+                    <h3>Mi Progreso</h3>
+                    <p><strong>Personas Contactadas:</strong> <span id="progreso-contactados">50</span></p>
+                    <p><strong>Afiliaciones Logradas:</strong> <span id="progreso-afiliaciones">12</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ingresar-datos" class="admin-section">
+            <h2 class="admin-subtitle">Ingresar Datos de Persona Contactada</h2>
+            <form class="admin-form">
+                <div class="form-group">
+                    <label for="nombre-persona">Nombre Completo:</label>
+                    <input type="text" id="nombre-persona" name="nombre-persona" required>
+                </div>
+                <div class="form-group">
+                    <label for="cedula-persona">Cédula:</label>
+                    <input type="text" id="cedula-persona" name="cedula-persona" required>
+                </div>
+                <div class="form-group">
+                    <label for="celular-persona">Celular:</label>
+                    <input type="tel" id="celular-persona" name="celular-persona" required>
+                </div>
+                <div class="form-group">
+                    <label for="afiliado-checkbox">¿Se afilió?</label>
+                    <input type="checkbox" id="afiliado-checkbox" name="afiliado">
+                </div>
+                <button type="submit" class="btn-submit">Guardar Datos</button>
+            </form>
+        </section>
+
+        <section id="ver-datos" class="admin-section">
+            <h2 class="admin-subtitle">Datos Ingresados</h2>
+            <div class="data-search-bar">
+                <input type="text" placeholder="Buscar por cédula o nombre...">
+                <button class="btn-search">Buscar</button>
+            </div>
+            <div class="data-table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cédula</th>
+                            <th>Celular</th>
+                            <th>Afiliado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Juan Pérez</td>
+                            <td>1020304050</td>
+                            <td>310-987-6543</td>
+                            <td>Sí</td>
+                            <td>
+                                <button class="btn-action edit">Editar</button>
+                                <button class="btn-action delete">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>María García</td>
+                            <td>1030405060</td>
+                            <td>320-123-4567</td>
+                            <td>No</td>
+                            <td>
+                                <button class="btn-action edit">Editar</button>
+                                <button class="btn-action delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

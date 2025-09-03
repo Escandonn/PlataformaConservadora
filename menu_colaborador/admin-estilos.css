@@ -40,21 +40,15 @@ a {
     left: 0;
     width: 100%;
     z-index: 1000;
-
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-
 .admin-nav {
     display: flex;
-    /* Usa esta variable para alinear a la izquierda */
-    justify-content: flex-start; 
+    justify-content: space-between; /* Alinear a los extremos en escritorio */
     align-items: center;
-    flex-wrap: wrap;
-    /* Usa esta variable para el espacio entre el logo y los enlaces */
-    gap: 100px; 
+    flex-wrap: wrap; /* Permite salto de línea en móviles */
 }
-
 
 .admin-logo {
     font-family: 'Playfair Display', serif;
@@ -90,7 +84,7 @@ a {
 }
 
 .logout-btn:hover {
-    background-color: #1A237E;
+    background-color: var(--color-primary);
 }
 
 /* =========================================================================
@@ -98,7 +92,7 @@ a {
    ========================================================================= */
 
 .admin-main {
-    padding-top: 100px;
+    padding-top: 100px; /* Ajusta el espacio por header fijo */
     padding: 100px 40px 40px;
 }
 
@@ -193,7 +187,7 @@ a {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
+    flex-wrap: wrap; 
 }
 
 .data-search-bar input {
@@ -212,12 +206,18 @@ a {
     cursor: pointer;
 }
 
+/* Tabla Responsive */
+.data-table-container {
+    overflow-x: auto;
+}
+
 .data-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.data-table th, .data-table td {
+.data-table th,
+.data-table td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
@@ -254,22 +254,17 @@ a {
    MEDIA QUERIES PARA RESPONSIVE
    ========================================================================= */
 
-/* =========================================================================
-   MEDIA QUERIES PARA RESPONSIVE
-   ========================================================================= */
-
 @media (max-width: 768px) {
     .admin-header {
-        padding: 20px 20px;
+        padding: 20px;
     }
     
     .admin-nav {
         flex-direction: column;
         align-items: flex-start;
-        /* CORRECCIÓN: Reduce el espacio vertical en móvil */
-        gap: 20px; 
+        gap: 20px; /* Menos espacio vertical en móviles */
     }
-    
+
     .admin-nav-links {
         flex-direction: column;
         width: 100%;
@@ -291,8 +286,7 @@ a {
     }
 
     .admin-main {
-        padding: 100px 20px 20px;
-        padding-top: 350px;
+        padding: 140px 20px 20px; /* Ajuste para evitar solape en móviles */
     }
     
     .admin-section {
@@ -315,13 +309,5 @@ a {
     .data-search-bar input,
     .btn-search {
         width: 100%;
-    }
-
-    .data-table-container {
-        overflow-x: auto;
-    }
-
-    .data-table {
-        width: 700px;
     }
 }

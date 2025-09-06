@@ -3,10 +3,10 @@
    ========================================================================= */
 
 :root {
-    --color-primary: #1A237E; /* Azul Marino */
+    --color-primary: #1A237E;   /* Azul Marino */
     --color-secondary: #C9A646; /* Dorado/Mostaza */
-    --color-bg: #F5F5F5; /* Gris Claro */
-    --color-text: #424242; /* Gris Oscuro */
+    --color-bg: #F5F5F5;        /* Gris Claro */
+    --color-text: #424242;      /* Gris Oscuro */
     --color-white: #FFFFFF;
 }
 
@@ -40,21 +40,16 @@ a {
     left: 0;
     width: 100%;
     z-index: 1000;
-
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-
 .admin-nav {
     display: flex;
-    /* Usa esta variable para alinear a la izquierda */
-    justify-content: flex-start; 
+    justify-content: flex-start; /* Alinea a la izquierda */
     align-items: center;
     flex-wrap: wrap;
-    /* Usa esta variable para el espacio entre el logo y los enlaces */
-    gap: 100px; 
+    gap: 100px; /* Espacio entre el logo y los enlaces */
 }
-
 
 .admin-logo {
     font-family: 'Playfair Display', serif;
@@ -66,7 +61,7 @@ a {
 .admin-nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 5px;
     margin: 0;
     padding: 0;
 }
@@ -193,7 +188,7 @@ a {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
+    flex-wrap: wrap; /* Permite apilar en pantallas pequeñas */
 }
 
 .data-search-bar input {
@@ -217,7 +212,8 @@ a {
     border-collapse: collapse;
 }
 
-.data-table th, .data-table td {
+.data-table th,
+.data-table td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
@@ -254,74 +250,28 @@ a {
    MEDIA QUERIES PARA RESPONSIVE
    ========================================================================= */
 
-/* =========================================================================
-   MEDIA QUERIES PARA RESPONSIVE
-   ========================================================================= */
 
 @media (max-width: 768px) {
     .admin-header {
-        padding: 20px 20px;
+        padding: 8px 10px;
     }
-    
     .admin-nav {
-        flex-direction: column;
-        align-items: flex-start;
-        /* CORRECCIÓN: Reduce el espacio vertical en móvil */
-        gap: 20px; 
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
     }
-    
+    .admin-logo {
+        font-size: 1.1rem;
+        margin-bottom: 0;
+    }
     .admin-nav-links {
-        flex-direction: column;
-        width: 100%;
-        gap: 15px;
-        margin-top: 20px;
+        flex-direction: row;
+        gap: 5px;
+        width: auto;
+        margin-top: 0;
     }
-    
-    .admin-nav-links li a {
-        display: block;
-        width: 100%;
-        text-align: left;
-    }
-    
-    .logout-btn {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-    }
-
     .admin-main {
-        padding: 100px 20px 20px;
-        padding-top: 350px;
-    }
-    
-    .admin-section {
-        padding: 20px;
-    }
-    
-    .admin-title {
-        font-size: 2rem;
-    }
-    
-    .admin-subtitle {
-        font-size: 1.5rem;
-    }
-
-    .info-cards,
-    .data-search-bar {
-        grid-template-columns: 1fr;
-    }
-
-    .data-search-bar input,
-    .btn-search {
-        width: 100%;
-    }
-
-    .data-table-container {
-        overflow-x: auto;
-    }
-
-    .data-table {
-        width: 700px;
+        padding: 60px 5px 10px;
     }
 }

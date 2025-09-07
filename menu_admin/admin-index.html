@@ -38,279 +38,77 @@
     </header>
 
     <main class="admin-main">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <section id="home" class="admin-section">
-            <h1 class="admin-title">Bienvenido, Administrador</h1>
-            <p class="admin-intro">
-                Este es el panel de control de la Plataforma Conservadora. Aquí podrá gestionar todos los aspectos clave, desde la creación de colaboradores hasta la visualización y análisis de datos vitales para la campaña.
-            </p>
-            <div class="info-cards">
-                <div class="card">
-                    <h3>Gestión de Usuarios</h3>
-                    <p>Cree, modifique y elimine perfiles de colaboradores de forma segura.</p>
-                </div>
-                <div class="card">
-                    <h3>Análisis de Datos</h3>
-                    <p>Obtenga una visión completa y detallada de los datos de la plataforma.</p>
-                </div>
-            </div>
-        </section>
-
         <section id="crear-colaborador" class="admin-section">
-            <h2 class="admin-subtitle">Crear Nuevo Colaborador</h2>
-            <form class="admin-form">
-                <div class="form-group">
-                    <label for="cedula">Cédula:</label>
-                    <input type="text" id="cedula" name="cedula" required>
-                </div>
-                <div class="form-group">
-                    <label for="correo">Correo:</label>
-                    <input type="email" id="correo" name="correo" required>
-                </div>
-                <div class="form-group">
-                    <label for="contrasena">Contraseña:</label>
-                    <input type="password" id="contrasena" name="contrasena" required>
-                </div>
-                <div class="form-group">
-                    <label for="celular">Celular:</label>
-                    <input type="tel" id="celular" name="celular" required>
-                </div>
-                <div class="form-group">
-                    <label for="token">Token:</label>
-                    <input type="text" id="token" name="token">
-                </div>
-                <button type="submit" class="btn-submit">Crear Colaborador</button>
+            <h2>Crear Trabajador</h2>
+            <form id="form-trabajador">
+                <input type="text" id="nombre" placeholder="Nombre" required>
+                <input type="text" id="apellido" placeholder="Apellido" required>
+                <input type="text" id="apellidos2" placeholder="Segundo Apellido" required>
+                <input type="text" id="cedula" placeholder="Cédula" required>
+                <input type="email" id="correo" placeholder="Correo" required>
+                <input type="password" id="contrasena" placeholder="Contraseña" required>
+                <button type="submit">Crear</button>
             </form>
         </section>
-
         <section id="visualizacion-datos" class="admin-section">
-            <h2 class="admin-subtitle">Visualización y Gestión de Datos</h2>
-            <div class="data-search-bar">
-                <input type="text" placeholder="Buscar por cédula, correo, etc.">
-                <button type="button" class="btn-search">Buscar</button>
-            </div>
-            
-            <div class="data-table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Cédula</th>
-                            <th>Correo</th>
-                            <th>Celular</th>
-                            <th>Estado</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td data-label="Cédula">123456789</td>
-                            <td data-label="Correo">colaborador1@email.com</td>
-                            <td data-label="Celular">300-111-2222</td>
-                            <td data-label="Estado">Activo</td>
-                            <td data-label="Acciones">
-                                <button class="btn-action edit">Modificar</button>
-                                <button class="btn-action delete">Eliminar</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <h2>Trabajadores Registrados</h2>
+            <input type="text" id="busqueda" placeholder="Buscar por cédula o nombre">
+            <button onclick="buscar()">Buscar</button>
+            <table id="tabla-trabajadores">
+                <thead>
+                    <tr>
+                        <th>Nombre</th><th>Apellido</th><th>Segundo Apellido</th><th>Cédula</th><th>Correo</th><th>Firmó</th><th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="estadisticas"></div>
         </section>
-
     </main>
-    
+    <script src="logica.js"></script>
+    <script>
+// Renderizar tabla y estadísticas
+function renderTabla(lista) {
+    const tbody = document.querySelector('#tabla-trabajadores tbody');
+    tbody.innerHTML = '';
+    lista.forEach(t => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${t.nombre}</td><td>${t.apellido}</td><td>${t.apellidos2}</td><td>${t.cedula}</td><td>${t.correo}</td><td>${t.yaFirmo ? 'Sí' : 'No'}</td><td><button onclick="eliminar(${t.id})">Eliminar</button></td>`;
+        tbody.appendChild(tr);
+    });
+}
+function renderEstadisticas() {
+    document.getElementById('estadisticas').innerText = `Total firmados: ${contarFirmados()}`;
+}
+function buscar() {
+    const val = document.getElementById('busqueda').value;
+    let lista = leerTrabajadores();
+    if (val) lista = buscarTrabajador({ cedula: val, nombre: val });
+    renderTabla(lista);
+}
+function eliminar(id) {
+    eliminarTrabajador(id);
+    renderTabla(leerTrabajadores());
+    renderEstadisticas();
+}
+document.getElementById('form-trabajador').onsubmit = function(e) {
+    e.preventDefault();
+    crearTrabajador({
+        nombre: nombre.value,
+        apellido: apellido.value,
+        apellidos2: apellidos2.value,
+        cedula: cedula.value,
+        correo: correo.value,
+        contrasena: contrasena.value
+    });
+    renderTabla(leerTrabajadores());
+    renderEstadisticas();
+    this.reset();
+};
+window.onload = function() {
+    renderTabla(leerTrabajadores());
+    renderEstadisticas();
+};
+    </script>
 </body>
 </html>

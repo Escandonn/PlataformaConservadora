@@ -1,38 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Partido Conservador</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+  <title>Login Simple - Firestore</title>
+  <!-- Importar CSS externo -->
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-box">
-            <a href="index.html" class="logo">
-                <img src="image.png" alt="Logo del Partido Conservador" style="height: 60px; margin-bottom: 20px;">
-            </a>
-            <h2>Acceso a Miembros</h2>
-            <form class="login-form" id="login-form">
-                <div class="form-group">
-                    <label for="usuario">Usuario</label>
-                    <input type="text" id="usuario" name="usuario" required>
-                </div>
-                <div class="form-group">
-                    <label for="contrasena">Contraseña</label>
-                    <input type="password" id="contrasena" name="contrasena" required>
-                </div>
-                <button type="submit" class="login-btn-form">Ingresar</button>
-            </form>
-            <a href="../recuperar_contrasena/crearcontresena.html" class="forgot-password">¿Olvidaste tu contraseña?</a>
-            <a href="../home/home.html" class="back-home">← Volver a la página principal</a>
-        </div>
-    </div>
-    <script src="login.js"></script>
+  <div class="login-box">
+    <h2>Iniciar Sesión</h2>
+    <input type="email" id="correo" placeholder="Correo" required>
+    <input type="password" id="clave" placeholder="Contraseña" required>
+    <button id="btnLogin">Entrar</button>
+    <p id="mensaje"></p>
+  </div>
+
+  <!-- Importar JS externo -->
+  <script type="module" src="login.js"></script>
 </body>
 </html>

@@ -3,8 +3,10 @@ CONTEXTO:
 ADMINISTRACION
 
 	CREA:
-		TRABAJDOR:
+		TRABAJDOR:CRUD		
 				DATOS:
+					correo
+					contrasena
 					NOMBRE
 					1. APRELLIDO
 					1.2 APELLIDO
@@ -23,19 +25,23 @@ UN TRABAJDOR TIENE SU PANEL SU HTML Y CSS
 EL TRABAJDOR ES UN ENCUESTADOR QUE REUNE DATOS DE MANERA CONSENTIDA A AMIGOS TALES COMO:
 
 
-NOMBRES
-APELLIDO1
-APELLIDOS2
-CEDULA
-DIRECION
-redes
+NOMBRE
+					1. APRELLIDO
+					1.2 APELLIDO
+					3.EDAD
+					4. CEDULA
+					5: redes:
+                                     6: 
+							5.1:INSTGRAM
+							5.2:FACEBOOK
+					firmo opcion ture y false empieza en false
 
-ETC ETCCC..
-
-EN UN DIA X ESTOS ENCUENTOS DADO SU TRABAJDOR ESPECIFICO LES DIRA QUE TIENEN QUE IR A UN LUGAR SI VAN EL TRABAJDOR LE UNDE TRUE 
 
 
-EK ADUBISITRADOR TENDRA UNA OCPIONES ENDONDE VISUAILI<r la cantidad de true de todos los trabajadores y mas opciones dime cuales
+
+
+
+
 
 
 
